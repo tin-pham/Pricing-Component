@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+    <script src="./script.js" defer></script>
+    <title>Frontend Mentor | [Challenge Name Here]</title>
+  </head>
+  <body>
+    <section>
+      <h1 class="heading">Our Pricing</h1>
+
+      <div class="toggle">
+        <h4>Annually</h4>
+        <label class="switch">
+          <input type="checkbox" />
+          <span class="slider"></span>
+        </label>
+        <h4>Monthly</h4>
+      </div>
+
+      <div class="prices-list">
+        <div class="price price--white">
+          <h3 class="price__heading">Basic</h3>
+          <h1 data-id="basic" class="price__amount"><span>$</span>199.99</h1>
+          <table>
+            <tr>
+              <td>500 GB Storage</td>
+            </tr>
+            <tr>
+              <td>2 Users Allowed</td>
+            </tr>
+            <tr>
+              <td>Send up to 3 GB</td>
+            </tr>
+          </table>
+          <button class="button button--purple">Learn More</button>
+        </div>
+
+        <div class="price price--purple">
+          <h3 class="price__heading">Professional</h3>
+          <h1 data-id="pro" class="price__amount"><span>$</span>249.99</h1>
+          <table>
+            <tr>
+              <td>1 TB Storage</td>
+            </tr>
+
+            <tr>
+              <td>5 Users Allowed</td>
+            </tr>
+
+            <tr>
+              <td>Send up to 10 GB</td>
+            </tr>
+          </table>
+          <button class="button button--white">Learn More</button>
+        </div>
+
+        <div class="price price--white">
+          <h3 class="price__heading">Master</h3>
+          <h1 data-id="master" class="price__amount"><span>$</span>399.99</h1>
+          <table>
+            <tr>
+              <td>2 TB Storage</td>
+            </tr>
+
+            <tr>
+              <td>10 Users Allowed</td>
+            </tr>
+
+            <tr>
+              <td>Send up to 20 GB</td>
+            </tr>
+          </table>
+          <button class="button button--purple">Learn More</button>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

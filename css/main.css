@@ -1,0 +1,257 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+body,
+html {
+  position: relative;
+  min-height: 100vh;
+  z-index: -2;
+  background: #f6f6fe;
+}
+
+section {
+  width: 100%;
+  height: 100%;
+  padding: 3em;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section * {
+  z-index: 1;
+}
+
+section::before {
+  content: url("../images/bg-top.svg");
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 0;
+}
+
+section::after {
+  content: url("../images/bg-bottom.svg");
+  position: absolute;
+  background-position: bottom left;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.toggle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1.5em;
+  color: #b3b5c6;
+}
+
+.toggle .switch {
+  width: 60px;
+  height: 30px;
+  position: relative;
+  border-radius: 100px;
+  overflow: hidden;
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+  background: -webkit-gradient(linear, left top, right top, from(#a3a8f0), to(#696fdd));
+  background: linear-gradient(to right, #a3a8f0, #696fdd);
+  cursor: pointer;
+}
+
+.toggle .switch .slider {
+  position: absolute;
+  width: 40%;
+  left: 0;
+  height: 80%;
+  border-radius: 50%;
+  background: white;
+  -webkit-transform: translate(5px, 3px);
+          transform: translate(5px, 3px);
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+}
+
+.toggle .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle .switch input:checked + .slider {
+  -webkit-transform: translate(calc(150% - 5px), 3px);
+          transform: translate(calc(150% - 5px), 3px);
+}
+
+.heading {
+  margin-bottom: 3rem;
+  color: #6d708d;
+}
+
+.prices-list {
+  text-align: center;
+}
+
+@media (min-width: 1100px) {
+  .prices-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.prices-list .price {
+  margin: 2rem 0;
+  width: 350px;
+  padding: 2em;
+  border-radius: 10px;
+}
+
+.prices-list .price--purple {
+  background: linear-gradient(135deg, #a3a8f0, #696fdd);
+  color: white;
+}
+
+@media (min-width: 1100px) {
+  .prices-list .price--purple {
+    padding: 4em 2em;
+  }
+}
+
+.prices-list .price--white {
+  background: white;
+  color: #6d708d;
+}
+
+.prices-list .price--white h1 {
+  color: #494c5f;
+}
+
+.prices-list .price__amount {
+  font-size: 5rem;
+  margin: 1rem;
+  position: relative;
+}
+
+.prices-list .price__amount span {
+  font-size: 3rem;
+  position: absolute;
+  -webkit-transform: translate(-100%, 30%);
+          transform: translate(-100%, 30%);
+}
+
+.prices-list .price table,
+.prices-list .price tr,
+.prices-list .price td {
+  border-collapse: collapse;
+}
+
+.prices-list .price table {
+  width: 80%;
+  margin: 1rem auto;
+}
+
+.prices-list .price table td {
+  border-top: 1px solid #b3b5c6;
+  border-bottom: 1px solid #b3b5c6;
+  margin: 0;
+  padding: 1em;
+}
+
+.prices-list .price .button {
+  border: none;
+  outline: none;
+  padding: 1em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.prices-list .price .button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: all 400ms ease;
+  transition: all 400ms ease;
+  z-index: -1;
+}
+
+.prices-list .price .button:hover::before {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: all 400ms ease;
+  transition: all 400ms ease;
+}
+
+.prices-list .price .button--purple {
+  background: -webkit-gradient(linear, left top, right top, from(#a3a8f0), to(#696fdd));
+  background: linear-gradient(to right, #a3a8f0, #696fdd);
+  color: white;
+}
+
+.prices-list .price .button--purple:hover {
+  color: #696fdd;
+  border: 1px solid #696fdd;
+}
+
+.prices-list .price .button--purple::before {
+  background: white;
+}
+
+.prices-list .price .button--white {
+  background: white;
+  color: #696fdd;
+}
+
+.prices-list .price .button--white:hover {
+  color: white;
+  border: 1px solid white;
+}
+
+.prices-list .price .button--white::before {
+  background: -webkit-gradient(linear, left top, right top, from(#a3a8f0), to(#696fdd));
+  background: linear-gradient(to right, #a3a8f0, #696fdd);
+}
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,206 @@
+@import './config', './default';
+
+body,
+html {
+  position: relative;
+  min-height: 100vh;
+  z-index: -2;
+  background: $v-light-gray-blue;
+}
+section {
+  width: 100%;
+  height: 100%;
+  padding: 3em;
+  height: 100%;
+
+  @include flex(column, center, center);
+  * {
+    z-index: 1;
+  }
+  &::before {
+    content: url('../images/bg-top.svg');
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 0;
+  }
+  &::after {
+    content: url('../images/bg-bottom.svg');
+    position: absolute;
+    background-position: bottom left;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+  }
+}
+
+// Toggle Button
+.toggle {
+  display: flex;
+  gap: 1.5em;
+  color: $light-gray-blue;
+  .switch {
+    width: 60px;
+    height: 30px;
+    position: relative;
+    border-radius: 100px;
+    overflow: hidden;
+    transform: translateY(-5px);
+    background: linear-gradient(
+      to right,
+      hsl(236, 72%, 79%),
+      hsl(237, 63%, 64%)
+    );
+    cursor: pointer;
+    .slider {
+      position: absolute;
+      width: 40%;
+      left: 0;
+      height: 80%;
+      border-radius: 50%;
+      background: white;
+      transform: translate(5px, 3px);
+      transition: all 200ms ease;
+    }
+
+    input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    input:checked + .slider {
+      transform: translate(calc(150% - 5px), 3px);
+    }
+  }
+}
+
+.heading {
+  margin-bottom: 3rem;
+  color: $gray-blue;
+}
+
+.prices-list {
+  text-align: center;
+  @include desktop {
+    @include flex(row, center, center);
+  }
+  .price {
+    margin: 2rem 0;
+    width: 350px;
+    padding: 2em;
+    border-radius: 10px;
+    &--purple {
+      background: linear-gradient(
+        135deg,
+        hsl(236, 72%, 79%),
+        hsl(237, 63%, 64%)
+      );
+      color: white;
+
+      @include desktop {
+        padding: 4em 2em;
+      }
+    }
+
+    &--white {
+      background: white;
+      color: $gray-blue;
+      h1 {
+        color: $dark-gray-blue;
+      }
+    }
+
+    &__amount {
+      font-size: 5rem;
+      margin: 1rem;
+      position: relative;
+      span {
+        font-size: 3rem;
+        position: absolute;
+        transform: translate(-100%, 30%);
+      }
+    }
+
+    table,
+    tr,
+    td {
+      border-collapse: collapse;
+    }
+
+    table {
+      width: 80%;
+      margin: 1rem auto;
+      td {
+        border-top: 1px solid $light-gray-blue;
+        border-bottom: 1px solid $light-gray-blue;
+        margin: 0;
+        padding: 1em;
+      }
+    }
+
+    .button {
+      border: none;
+      outline: none;
+      padding: 1em;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      border-radius: 10px;
+      cursor: pointer;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        transform: scale(0);
+        transition: all 400ms ease;
+        z-index: -1;
+      }
+
+      &:hover::before {
+        transform: scale(1);
+        transition: all 400ms ease;
+      }
+
+      &--purple {
+        background: linear-gradient(
+          to right,
+          hsl(236, 72%, 79%),
+          hsl(237, 63%, 64%)
+        );
+        color: white;
+        &:hover {
+          color: hsl(237, 63%, 64%);
+          border: 1px solid hsl(237, 63%, 64%);
+        }
+
+        &::before {
+          background: white;
+        }
+      }
+
+      &--white {
+        background: white;
+        color: hsl(237, 63%, 64%);
+
+        &:hover {
+          color: white;
+          border: 1px solid white;
+        }
+
+        &::before {
+          background: linear-gradient(
+            to right,
+            hsl(236, 72%, 79%),
+            hsl(237, 63%, 64%)
+          );
+        }
+      }
+    }
+  }
+}
