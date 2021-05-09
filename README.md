@@ -36,8 +36,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Frontend Mentor Solution](https://www.frontendmentor.io/solutions/responsive-pricing-component-using-sass-bem-and-javascript-nFFE86G_q)
+- Live Site URL: [URL](https://silly-tereshkova-7ea5d0.netlify.app/)
 
 ## My process
 
